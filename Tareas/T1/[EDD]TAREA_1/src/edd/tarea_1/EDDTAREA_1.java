@@ -34,7 +34,7 @@ public class EDDTAREA_1 {
             for (int n = 0; n < matriz.length;n++) //Columnas
                 matriz[n][f]= 1;
             
-            //Llena el arreglo parte superior
+            //Llena el arreglo parte inferior
              for (int n = 0; n < matriz.length;n++) //Columnas
                 matriz[f][n]= 1;
             
