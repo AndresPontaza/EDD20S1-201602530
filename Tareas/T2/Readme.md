@@ -1,0 +1,45 @@
+# Especificaciones Informales
+- **Moneda:** los nombres de las operaciones son Crear Dueño, Crear_Moneda, Transferir, TransferirFrom, Validar_Transaccion, Mostrar_estado, AgregarMonedas, Transaccion_Enviar_Moneda, Existe_Moneda, Obtener_Lista_Dueños, Obtener_Lista_Monedas, Colocar_Lista_Dueños, Colocar_Lista_Monedas.
+
+- **Descripción:** La Moneda es un TDA que contiene nombre y la cantidad total de monedas por consiguiente la lista de Dueños de las monedas contienen su nombre y el saldo disponible de cantidad de monedas que es una lista de monedas disponibles con su respectivo tipo de moneda  
+
+- **Operaciones:**
+  - Crear Dueño ()
+    - Requerimientos: Constructor dueño. 
+    - Efecto: Ingresa un nuevo elemento a la lista dueños.
+  - Crear Moneda (Nombre: Cadena, Cantidad: Decimal)
+    - Requerimientos: Ingresar en el campo nombre una cadena y en cantidad un valor decimal o entero. 
+    - Efecto: Ingresa un nuevo elemento en la lista Moneda.
+  - Transferir(Dueño dueño, String nombre, Float cantidad)
+    - Requerimientos: Ingresar en el campo Destinatario un objeto tipo dueño, en el campo nombre una cadena del nombre del dueño y en cantidad un valor decimal o entero a transferir.
+    - Efecto: Modifica el campo saldo con la cantidad a tranferir más saldo actual
+  - TransferirFrom (Remitente: Cadena, Cantidad_a_transferir:Decimal, destinatario: Cadena)
+    - Requerimientos: Ingresar en el campo Remitente una Cadena, Cantidad_a_transferir un decimal o entero y en el destinatario una cadena.
+    - Efecto: Modifica el campo saldo del destinatario con la cantidad a tranferir más saldo actual y del Remitente saldo_actual menos cantidad_a_transferir 
+  - Validar_Transaccion(String nombre, Float cantidad)
+    - Requerimientos: Debe ser el Remitente de tipo Cadena y la Cantidad a transferir debe ser decimal o entero.  
+    - Efecto: Verifica si se puede realizar la transferencia. 
+  - Mostrar_estado() devuelve (Mensaje en consola)
+    - Requerimientos: Tener registrados dueños 
+    - Efecto: Imprime en consola la cantidad de monedas disponibles 
+  - AgregarMonedas(Moneda mon)
+    - Requerimientos: Debe ser de tipo moneda
+    - Efecto: Agrega a la lista de monedas la moneda
+  - Transaccion_Enviar_Moneda() 
+    - Requerimientos: Tener la moneda y cantidad disponible. 
+    - Efecto: Verifica si se puede proceder a transferir las monedas al nuevo dueño.
+  - Existe_Moneda(String nombre)
+    - Requerimientos: Ingresar en el campo nombre de la cadena
+    - Efecto: retorna un true en dado caso que exista en caso contrario un else
+  - Obtener_Lista_Dueños()
+    - Requerimientos: La lista debe contener elementos
+    - Efecto: retorna los elementos de la lista
+  - Obtener_Lista_Monedas()
+    - Requerimientos: la lista debe contener elementos
+    - Efecto: retorna los elementos de la lista
+  - Colocar_Lista_Dueños()
+    - Requerimientos: la lista debe ser creada
+    - Efecto: llenar la lista dueños
+  - Colocar_Lista_Monedas()
+    - Requerimientos: la lista debe ser creada
+    - Efecto: llenar la lista dueños
