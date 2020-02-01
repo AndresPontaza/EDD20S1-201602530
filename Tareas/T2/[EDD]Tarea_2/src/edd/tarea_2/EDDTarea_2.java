@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 public class EDDTarea_2 {
-     public static LinkedList<Moneda> monedero = new LinkedList<Moneda>();
+     public static LinkedList<Moneda> cartera = new LinkedList<Moneda>();
 
     public static void main(String[] args) {
      Opciones();
@@ -84,7 +84,7 @@ public class EDDTarea_2 {
 
     public static void AgregarMonedas(Moneda mon) {
         boolean band = false;
-        for (Moneda m : monedero) {
+        for (Moneda m : cartera) {
             if (m.Obtener_Nombre()== mon.Obtener_Nombre()) {
                 band = true;
                 m.Colocar_Cantidad(m.Obtener_Cantidad()+ mon.Obtener_Cantidad());
@@ -92,7 +92,7 @@ public class EDDTarea_2 {
         }
 
         if (band == false) { 
-            monedero.add(mon);
+            cartera.add(mon);
         }
     }
 
@@ -115,7 +115,7 @@ public class EDDTarea_2 {
     }
 
     public static void Transferir(Dueño dueño, String nombre, Float cantidad) {
-        for (Moneda mon : monedero) {
+        for (Moneda mon : cartera) {
             if (mon.Obtener_Nombre().equalsIgnoreCase(nombre)) {
                 mon.Colocar_Cantidad(mon.Obtener_Cantidad()- cantidad);
                 dueño.Agregar_Moneda(new Moneda(nombre, cantidad));
@@ -124,7 +124,7 @@ public class EDDTarea_2 {
     }
 
     public static boolean Validar_Transaccion(String nombre, Float cantidad) {
-        for (Moneda mon : monedero) {
+        for (Moneda mon : cartera) {
             if (mon.Obtener_Nombre().equalsIgnoreCase(nombre)) {
                 if (cantidad <= mon.Obtener_Cantidad()) {
                     return true;
@@ -136,7 +136,7 @@ public class EDDTarea_2 {
     }
 
     public static boolean Existe_Moneda(String nombre) {
-        for (Moneda mon : monedero) {
+        for (Moneda mon : cartera) {
             if (mon.Obtener_Nombre().equalsIgnoreCase(nombre)) {
                 return true;
             }
@@ -183,7 +183,7 @@ public class EDDTarea_2 {
     public static void Mostrar_Estado() {
 
         System.out.println("---------------------------------");
-        for (Moneda m : monedero) {
+        for (Moneda m : cartera) {
             System.out.println(m.Obtener_Cantidad()+ " " + m.Obtener_Nombre());
         }
         System.out.println("---------------------------------"+"\n");
