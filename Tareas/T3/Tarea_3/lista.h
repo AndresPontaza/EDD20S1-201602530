@@ -63,17 +63,16 @@ class lista
         if (n == NULL){
             cout << "No se puede eliminar un elemento vacío" << endl;
         } else if (n == Inicio) {
-            Inicio = Inicio->Siguiente;
+            Inicio = NULL;
         } else {
             do{
                 if (aux1->Siguiente != NULL ){
                     if (n == aux1->Siguiente){
-                        aux1->Siguiente = aux1->Siguiente->Siguiente;
+                        aux1->Siguiente = NULL;
                         cout << "Nodo eliminado" << endl;
                         band= false;
                     } else {
                         aux1 = aux1->Siguiente;
-
                     }
 
                 } else {

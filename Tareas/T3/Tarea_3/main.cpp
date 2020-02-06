@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
     elim = Prueba->Buscar(carne);
     Prueba->Eliminar(elim);
     cout << "****************************************" <<endl;
-    cout << "*        Lista con nodo borrado        *" <<endl;
+    cout << "*     Lista apartir del nodo borrado   *" <<endl;
     cout << "****************************************" <<endl;
     Prueba->Imprimir();
 
