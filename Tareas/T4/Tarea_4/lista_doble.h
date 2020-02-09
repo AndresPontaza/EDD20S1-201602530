@@ -10,17 +10,15 @@ using namespace std;
 class nodo{
     public:
 
-    int Id;
-    string Nombre;
+    char Car;
     nodo* sig;
     nodo* ant;
 
     nodo(){
           }
 
-    nodo (int id, string nombre){
-        Id = id;
-        Nombre = nombre;
+    nodo (char car){
+        Car=car;
         sig;
         ant;
     }
@@ -39,8 +37,8 @@ class lista_doble
         ultimo = NULL;
     }
 
-    void Insertar_Inicio(nodo* n, int id, string nombre){
-        nodo* aux = new nodo(id, nombre); //Reserva memoria
+    void Insertar_Inicio(nodo* n, char car){
+        nodo* aux = new nodo(car); //Reserva memoria
 
         if (primero == NULL){
             //Lista vacia
@@ -64,8 +62,8 @@ class lista_doble
         }
     }
 
-    void Insertar_Primero( int id, string nombre){
-        Insertar_Inicio(primero, id, nombre);
+    void Insertar_Primero(char car){
+        Insertar_Inicio(primero, car);
     }
 
     void Mostrar_lista_primero_a_ultimo(){
@@ -74,7 +72,7 @@ class lista_doble
 
         if(primero!=NULL){
             while(actual!=NULL){
-            cout << "\n " << actual->Id << " " << actual->Nombre;
+            cout << "\n " << actual->Car;
             actual = actual->sig;
             }
         }
@@ -118,15 +116,15 @@ class lista_doble
         Borrar(ultimo);
     }
 
-    nodo* Buscar_por_carnet(int n)
+    nodo* Buscar_por_caracter(char car)
     {
         nodo* busc = primero;
         bool encontrado = false;
         while (busc != 0)
         {
-            if (busc->Id == n){
+            if (busc->Car == car){
                 encontrado = true;
-                cout << "Coincide con "; cout<< busc->Nombre <<endl;
+                cout << "Coincide con "; cout<< busc->Car <<endl;
                 return busc;
             } else {
                 busc = busc->sig;
@@ -134,11 +132,6 @@ class lista_doble
         }
         cout << "No se encontro nada "<< endl;
         return busc;
-    }
-
-    void Reemplaza_por_carnet(int n1, int n2){
-        nodo* reemp = Buscar_por_carnet(n1);
-        reemp->Id = n2;
     }
 
 };
